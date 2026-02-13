@@ -1,0 +1,16 @@
+{
+  "name": "simulador-mario-kart",
+  "version": "1.0.0",
+  "description": "Simulador de corrida do mario kart",
+  "license": "ISC",
+  "author": "souzdc",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "dev": "npx tsx ./src/index.ts"
+  },
+  "dependencies": {
+    "tsx": "^4.21.0",
+    "typescript": "^5.9.3"
+  }
+}

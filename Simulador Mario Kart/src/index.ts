@@ -9,7 +9,7 @@ const player2 = new Player("Luigi", 3, 4, 4);
 
     console.log(`Corrida entre ${player1.name} e ${player2.name} está começando...\n`)
 
-    playRaceEngine(player1, player2, 2);
+    playRaceEngine(player1, player2, 3);
 
 })(player1, player2);
 

@@ -47,6 +47,9 @@ export async function playRaceEngine(char1: Player, char2: Player, rounds: numbe
 
             char1.logRollResult(diceResult1, "velocidade");
             char2.logRollResult(diceResult2, "velocidade");
+
+            totalTestSkill1 > totalTestSkill2 ? char1.receivedPoint() : char2.receivedPoint();
+
         }
 
 
@@ -56,6 +59,9 @@ export async function playRaceEngine(char1: Player, char2: Player, rounds: numbe
 
             char1.logRollResult(diceResult1, "manobrabilidade");
             char2.logRollResult(diceResult2, "manobrabilidade");
+
+            totalTestSkill1 > totalTestSkill2 ? char1.receivedPoint() : char2.receivedPoint();
+          
         }
 
 
@@ -63,10 +69,25 @@ export async function playRaceEngine(char1: Player, char2: Player, rounds: numbe
             totalTestSkill1 = diceResult1 + char1.poder;
             totalTestSkill2 = diceResult2 + char2.poder;
 
+            console.log(`${char1.name} confrontou com ${char2.name}`);
+
             char1.logRollResult(diceResult1, "poder");
             char2.logRollResult(diceResult2, "poder");
+
+            if (totalTestSkill1 === totalTestSkill2 ) {
+                console.log(`Confronto empatado! Nenhuma ponto foi perdido`)
+                continue;
+            }
+
+            totalTestSkill1 > totalTestSkill2 ? char2.lossesPoint() : char1.lossesPoint();
         }
 
     }
 
-} // aula 17
+
+    char1.points > char2.points ? char1.winner() : char2.winner();
+    
+    char1.showPoints();
+    char2.showPoints();
+
+} 

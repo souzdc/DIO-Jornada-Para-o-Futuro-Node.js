@@ -1,0 +1,17 @@
+{
+  "name": "carrinho-da-shopee",
+  "version": "1.0.0",
+  "description": "Criar um carrinho de compras baseado no carrinho de compras da shopee, aonde o carrinho armazena itens e faça o cálculo de sub-itens automaticamente.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "devDependencies": {
+    "tsx": "^4.21.0",
+    "typescript": "^5.9.3"
+  }
+}

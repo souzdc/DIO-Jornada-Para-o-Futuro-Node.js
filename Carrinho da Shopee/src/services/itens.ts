@@ -1,13 +1,15 @@
 
-type Item = {
-    name: string;
-    price: number;
-    quantity: number;
-}
 
-async function createItem(item: Item) {
 
-    return {...item, subtotal: () => item.price * item.quantity}
+ function createItem(name: string, price: number, quantity: number) {
+
+    return {
+        name,
+        price,
+        quantity,
+        subtotal: () => price * quantity
+    }
 }
 
 export default createItem;
+

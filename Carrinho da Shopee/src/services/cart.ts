@@ -20,7 +20,25 @@ export function displayCart(userCart: Item[]){
     })
 }
 
-// async function removeItem(userCart, index) {}
+export function removeItem(userCart: Item[], item: Item ) {
+    const indexFound = userCart.findIndex((p) => p.name === item.name);
+
+    if (indexFound === -1) {
+        console.log('Item não encontrado');
+        return;
+    }
+
+    if (userCart[indexFound].quantity > 1 ) {
+        userCart[indexFound].quantity -= 1;
+        return;
+    }
+
+    if (userCart[indexFound].quantity === 1) {
+        userCart.splice(indexFound, 1);
+        return;
+    }
+}
+
 
 export function calculateTotal(userCart: Item[]): number {
     return userCart.reduce((total, item) => total + item.subtotal(), 0)

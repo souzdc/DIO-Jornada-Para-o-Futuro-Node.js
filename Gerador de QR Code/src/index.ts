@@ -1,5 +1,5 @@
 import prompt from "prompt";
-import { mainPrompt, Prompt } from "./prompts/prompt-main";
+import { mainPrompt } from "./prompts/prompt-main";
 
 async function main() {
     prompt.get(mainPrompt, async (err, result) => {
@@ -12,6 +12,8 @@ async function main() {
             console.log("escolheu o password")
         }
     })
+
+    prompt.start();
 }
 
 main();

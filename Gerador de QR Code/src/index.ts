@@ -1,7 +1,7 @@
 import prompt from "prompt";
-import { mainPrompt } from "./prompts/prompt-main";
+import { mainPrompt } from "./prompts/prompt-schema-main";
 import createQRCode from "./services/qr-code/create";
-import createPassword from "./services/password/create";
+import createPassword from "./services/password/create.password";
 
 async function main() {
     prompt.get(mainPrompt, async (err, result) => {
